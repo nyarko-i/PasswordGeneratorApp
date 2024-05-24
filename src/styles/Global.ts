@@ -1,19 +1,39 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
-const StyledGlobal = createGlobalStyle`
-    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+const GlobalStyles = createGlobalStyle`
+  :root {
+    --font-family: 'JetBrains Mono', monospace;
+    --line-height: 1.5;
+    --font-weight: 400;
+    --font-synthesis: none;
+    --text-rendering: optimizeLegibility;
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+    --box-sizing: border-box;
+    --background-color: ${({ theme }) => theme.colors.veryDarkGrey};
+    --color: ${({ theme }) => theme.colors.almostWhite};
+  }
 
-    :root {
-    font-family: "JetBrains Mono", monospace;
-    line-height: 1.5;
-    font-weight: 400;
+  *, *::before, *::after {
+    box-sizing: var(--box-sizing);
+  }
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight);
+    font-synthesis: var(--font-synthesis);
+    text-rendering: var(--text-rendering);
+    -webkit-font-smoothing: var(--webkit-font-smoothing);
+    -moz-osx-font-smoothing: var(--moz-osx-font-smoothing);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--background-color);
+    color: var(--color);
+  }
+`;
 
-`
-
-export default StyledGlobal
+export default GlobalStyles;

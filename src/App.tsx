@@ -1,6 +1,8 @@
 import { ThemeProvider } from "styled-components"
 import { theme } from "./styles/Theme.styled"
-import StyledGlobal from "./styles/Global"
+
+import GlobalStyles from "./styles/Global"
+
 
 
 
@@ -12,8 +14,10 @@ function App() {
 
   return (
     <>
-      <StyledGlobal/>
-      <ThemeProvider theme={ theme}>
+      <ThemeProvider theme={ theme }>
+        <GlobalStyles/>
+        
+
 
       </ThemeProvider>
     </>
