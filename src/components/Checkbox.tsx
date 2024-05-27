@@ -1,5 +1,6 @@
 // Import necessary component definition (FC) from React
 import { FC } from 'react';
+import { CheckBoxStyled, SpanStyled } from '../styles/CheckBox.styled';
 
 // Interface for Checkbox component props
 interface CheckboxProps {
@@ -13,17 +14,20 @@ interface CheckboxProps {
 const Checkbox: FC<CheckboxProps> = ({ label, id, isChecked, setIsChecked }) => {
   // Return JSX to render the checkbox element
   return (
-    <label>
+    
+    <CheckBoxStyled>
       <input
         type="checkbox"
         checked={isChecked}
         onChange={() => setIsChecked(!isChecked)}
-        name=""
         id={id}
       />
-      <span /> 
+      <SpanStyled />
       {label}
-    </label>
+    </CheckBoxStyled>
+
+  
+  
   );
 };
 

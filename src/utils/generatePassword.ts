@@ -1,7 +1,7 @@
 // Function to generate Password 
 
 function generatePassword(length: number, checkBoxValues: { [key: string]: boolean }) {
-    // destructure the check box values  for easier acess within the function
+    // destructure the check box values  for easier access within the function
     const { uppercase, lowercase, numbers, symbols } = checkBoxValues
 
     //Define character set for each function 

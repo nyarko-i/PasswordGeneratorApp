@@ -1,15 +1,15 @@
 // import necessary react hooks and styled components 
 import { FC , useState, useEffect, useRef } from 'react'
-import { CharacterLengthStyled, StyledInput, StyledLabel } from '../styles/CharacterLength.styled'
+import { CharacterLengthStyled } from '../styles/CharacterLength.styled'
 
-// Define minimum and maximum allowed chracter length
+// Define minimum and maximum allowed character length
 const MIN_LENGTH = 6 
 const MAX_LENGTH = 25
 
 //interface for  character container props 
 
 interface CharacterLengthContainerProps {
-    characterLength: number // the current character lenght value
+    characterLength: number // the current character length value
     setCharacterLength: (value: number) => void // function to update character length
 }
 
@@ -35,11 +35,11 @@ const CharacterLengthContainer: FC<CharacterLengthContainerProps> = ({ character
     // JSX for rendering the CharacterLengthContainer component
     return(
         <CharacterLengthStyled>
-            <StyledLabel>
+            <div>
                 <label>CharacterLength</label>
                 <p>{characterLength}</p>
-            </StyledLabel>
-            <StyledInput
+            </div>
+            <input
                 type = "range"
                 min={MIN_LENGTH}
                 max={MAX_LENGTH}
