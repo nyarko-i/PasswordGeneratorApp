@@ -1,6 +1,6 @@
 // Import necessary React components
 import { FC, useMemo } from "react";
-import { StrengthIndicatorStyled, Strength } from "../styles/StrengthIndicator.styled";
+import { StrengthIndicatorStyled, Strength, Bar, BarsContainer } from "../styles/StrengthIndicator.styled";
 
 // Define thresholds for password strength levels
 const TOO_WEAK_THRESHOLD = 17; // Minimum score for "TOO WEAK"
@@ -47,10 +47,6 @@ const StrengthIndicator: FC<StrengthIndicatorProps> = ({ checkBoxValues, length 
     }
   }, [uppercase, lowercase, numbers, symbols, length]); // Update strengthLevel only when relevant props change
 
-  // Create class name for bars based on strength level (for styling)
-  const barsClassName = strengthLevel?.replace(/\s/g, "-").replace(/!/g, "").toLowerCase() || '';
-  // Replace spaces with dashes, exclamation mark with nothing, and convert to lowercase
-
   // JSX for rendering the StrengthIndicator component (no comments within)
   return (
     <StrengthIndicatorStyled>
@@ -59,12 +55,12 @@ const StrengthIndicator: FC<StrengthIndicatorProps> = ({ checkBoxValues, length 
         {!strengthLevel ? "" : (
           <>
             <p>{strengthLevel}</p>
-            <div className={`bars ${barsClassName}`}>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </div>
+            <BarsContainer strengthLevel={strengthLevel}>
+              <Bar />
+              <Bar />
+              <Bar />
+              <Bar />
+            </BarsContainer>
           </>
         )}
       </Strength>

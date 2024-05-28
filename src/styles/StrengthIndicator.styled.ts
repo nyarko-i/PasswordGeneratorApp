@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+
+
+// Styled component for StrengthIndicator container
 export const StrengthIndicatorStyled = styled.div`
     display: flex;
-    background-color: $very-dark-grey;
-    padding: 1rem;
+    background-color: ${({ theme }) => theme.colors.veryDarkGrey};
+    padding: 0rem 1rem;
     justify-content: space-between;
     align-items: center;
 
@@ -16,69 +19,85 @@ export const StrengthIndicatorStyled = styled.div`
 
 
 
+
+
+// Styled component for strength section
 export const Strength = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+`;
 
-  .bars {
-    margin-left: 0.75rem;
-    display: flex;
-    gap: 0.5rem;
+// Styled component for individual bar
+export const Bar = styled.div`
+  height: 22px;
+  width: 6px;
+  background-color: ${({ theme }) => theme.colors.grey};
+`;
 
-    .bar {
-      height: 22px;
-      width: 6px;
-      background-color: ${({ theme }) => theme.colors.grey};
-    }
+// Styled component for container of bars with dynamic styling based on strength level
+export const BarsContainer = styled.div<{ strengthLevel: string }>`
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 0.75rem;
 
-    &.strong {
-      .bar {
-        background-color: ${({ theme }) => theme.colors.neonGreen};
-        outline: 2px solid ${({ theme }) => theme.colors.neonGreen};
+  ${Bar} {
+    background-color: ${({ theme, strengthLevel }) => {
+      switch (strengthLevel) {
+        case "TOO WEAK!":
+          return theme.colors.red;
+        case "WEAK":
+          return theme.colors.orange;
+        case "MEDIUM":
+          return theme.colors.yellow;
+        case "STRONG":
+          return theme.colors.neonGreen;
+        default:
+          return theme.colors.grey;
       }
-    }
-
-    &.medium {
-      .bar:nth-child(1),
-      .bar:nth-child(2),
-      .bar:nth-child(3) {
-        background-color: ${({ theme }) => theme.colors.yellow};
-        outline: 2px solid ${({ theme }) => theme.colors.yellow};
+    }};
+    outline: ${({ theme, strengthLevel }) => {
+      switch (strengthLevel) {
+        case "TOO WEAK!":
+          return `2px solid ${theme.colors.red}`;
+        case "WEAK":
+          return `2px solid ${theme.colors.orange}`;
+        case "MEDIUM":
+          return `2px solid ${theme.colors.yellow}`;
+        case "STRONG":
+          return `2px solid ${theme.colors.neonGreen}`;
+        default:
+          return `2px solid ${theme.colors.grey}`;
       }
-
-      .bar:nth-child(4) {
-        background-color: transparent;
-        outline: 2px solid ${({ theme }) => theme.colors.almostWhite};
-      }
-    }
-
-    &.weak {
-      .bar:nth-child(1),
-      .bar:nth-child(2) {
-        background-color: ${({ theme }) => theme.colors.orange};
-        outline: 2px solid ${({ theme }) => theme.colors.orange};
-      }
-
-      .bar:nth-child(3),
-      .bar:nth-child(4) {
-        background-color: transparent;
-        outline: 2px solid ${({ theme }) => theme.colors.almostWhite};
-      }
-    }
-
-    &.too-weak {
-      .bar {
-        background-color: ${({ theme }) => theme.colors.red};
-        outline: 2px solid ${({ theme }) => theme.colors.red};
-      }
-
-      .bar:nth-child(2),
-      .bar:nth-child(3),
-      .bar:nth-child(4) {
-        background-color: transparent;
-        outline: 2px solid ${({ theme }) => theme.colors.almostWhite};
-      }
-    }
+    }};
   }
-`
+
+  ${({ strengthLevel, theme }) => {
+    switch (strengthLevel) {
+      case "MEDIUM":
+        return `
+          ${Bar}:nth-child(4) {
+            background-color: transparent;
+            outline: 2px solid ${theme.colors.almostWhite};
+          }
+        `;
+      case "WEAK":
+        return `
+          ${Bar}:nth-child(3), ${Bar}:nth-child(4) {
+            background-color: transparent;
+            outline: 2px solid ${theme.colors.almostWhite};
+          }
+        `;
+      case "TOO WEAK!":
+        return `
+          ${Bar}:nth-child(2), ${Bar}:nth-child(3), ${Bar}:nth-child(4) {
+            background-color: transparent;
+            outline: 2px solid ${theme.colors.almostWhite};
+          }
+        `;
+      default:
+        return ``;
+    }
+  }}
+`;
+

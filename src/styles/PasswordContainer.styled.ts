@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const PasswordContainerStyled = styled.div`
-    background-color: ${({ theme }) => theme.colors.veryDarkGrey};
+    background-color: ${({ theme }) => theme.colors.darkGrey};
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0rem 1rem;
 `;
 
 export const PlaceHolderStyled = styled.p`
     color: ${({ theme }) => theme.colors.grey};
+    font-weight: bold;
+    font-size: 1rem;
+
 `;
 
 export const ErrorStyled = styled.p`

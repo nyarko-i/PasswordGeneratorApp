@@ -8,7 +8,7 @@ export const CharacterLengthStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     height: fit-content;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem 1rem;
   }
 
   label {
@@ -23,7 +23,7 @@ export const CharacterLengthStyled = styled.div`
   }
 
   input[type="range"] {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem 1rem;
     width: 100%;
     -webkit-appearance: none;
     appearance: none;

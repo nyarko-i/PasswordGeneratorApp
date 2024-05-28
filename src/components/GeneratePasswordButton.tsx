@@ -1,7 +1,7 @@
 import { FC } from "react";
 import IconArrowRight from "../assets/svgIconArrowRight";
 import generatePassword from "../utils/generatePassword";  
-
+import { GenerateButtonStyled } from "../styles/GenerateButton.styled";
 // Interface for GeneratePasswordButton component props
 interface GeneratePasswordButtonProps {
   setPassword: (value: string) => void; // Function to set the generated password (expects a string)
@@ -37,7 +37,7 @@ const GeneratePasswordButton: FC<GeneratePasswordButtonProps> = ({ setPassword, 
 
   // Return JSX to render the button (no comments within)
   return (
-    <button onClick={getPassword} aria-label="Generate Password">GENERATE<IconArrowRight /></button>
+    <GenerateButtonStyled onClick={getPassword} aria-label="Generate Password">GENERATE<IconArrowRight /></GenerateButtonStyled>
   );
 };
 
