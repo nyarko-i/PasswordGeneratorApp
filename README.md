@@ -1,4 +1,4 @@
-# Password Generator
+# Password Generator Application 
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@
 
 This project is a Password Generator application built with React TypeScript. It allows users to generate secure passwords based on selected criteria such as length, and inclusion of uppercase letters, lowercase letters, numbers, and symbols.
 
-[![Password Generator](./public/password.png)](http://localhost:3000)
+[![Password Generator](./public/password.png)](https://randompasswrd.netlify.app/)
 
 ## Features
 
