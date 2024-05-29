@@ -1,4 +1,4 @@
-# Password Generator
+# Password Generator Application 
 
 ## Table of Contents
 
