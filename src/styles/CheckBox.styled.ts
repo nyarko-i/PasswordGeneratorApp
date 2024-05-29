@@ -45,7 +45,7 @@ export const SpanStyled = styled.span`
   }
 
   &::after {
-    content: url("./dist/icon-check.svg");
+    content: url("/check.svg");
     position: absolute;
     right: 1px;
     top: -1px;
