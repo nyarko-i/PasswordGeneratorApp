@@ -11,7 +11,7 @@ export const CheckBoxStyled = styled.label`
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: 1.5rem;
+  gap: 1rem;
   cursor: pointer;
   padding-left: 2rem;
 
@@ -45,7 +45,7 @@ export const SpanStyled = styled.span`
   }
 
   &::after {
-    content: url("./public/icon-check.svg");
+    content: url("./dist/icon-check.svg");
     position: absolute;
     right: 1px;
     top: -1px;

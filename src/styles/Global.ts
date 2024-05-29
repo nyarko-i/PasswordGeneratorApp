@@ -135,7 +135,6 @@ const GlobalStyles = createGlobalStyle`
         ${PasswordContainerStyled} {
           min-width: 100%;
           max-width: 100%;
-          
 
           > p {
             font-size: 0.9rem;
