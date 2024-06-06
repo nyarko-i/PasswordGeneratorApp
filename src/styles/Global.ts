@@ -7,6 +7,7 @@ import { GenerateButtonStyled } from './GenerateButton.styled';
 
 const GlobalStyles = createGlobalStyle`
   :root {
+    
     --font-family: 'JetBrains Mono', monospace;
     --line-height: 1.5;
     --font-weight: 400;
@@ -21,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
 
   *, *::before, *::after {
     box-sizing: var(--box-sizing);
+    
   }
 
   body {
@@ -120,6 +122,7 @@ const GlobalStyles = createGlobalStyle`
       overflow: hidden;
       overflow-x: hidden;
       width: 100vw;
+      margin-left: 0.5rem;
 
       main {
         width: 95vw;
